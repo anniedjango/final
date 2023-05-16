@@ -1,0 +1,134 @@
+ {% block content %}
+<table>
+<tr>
+        <td><a href="logout">
+            <div class='buttons'>
+  <button> LOGOUT </button>
+ </div>
+        </td>
+      </tr>
+</table>
+<html>
+    <head>
+        <script>
+            function random_function()
+            {
+                var a=document.getElementById("input").value;
+                if(a==="Thiruvananthapuram")
+                {
+                    var arr=[" Neyyattinkara branch","Nedumangadu branch","Kattakada branch"];
+                }
+                else if(a==="Kottayam")
+                {
+                    var arr=["Changanassery branch"," Ettumanoor branch"," Vaikom branch"];
+                }
+                else if(a==="Kollam")
+                {
+                    var arr=["Kottarakkara  branch","Karunagappally branch","Punalur  branch"];
+                }
+                else if(a==="Thrissur")
+                {
+                    var arr=["Chalakudy branch","kunnamkulam  Branch","Thalapally  branch "];
+                }
+                else if(a==="Eranakulam")
+                {
+                    var arr=["Aluva branch","Angamaly branch"," North Paravur branch "];
+                }
+
+                var string="";
+
+                for(i=0;i<arr.length;i++)
+                {
+                    string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
+                }
+                document.getElementById("output").innerHTML=string;
+            }
+        </script>
+    </head>
+
+<body>
+
+  <h1>Register</h1>
+    <p>Please Fill the Form to Create a  New account.</p>
+
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+    <p>
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% if field.help_text %}
+
+      {% endif %}
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+  {% endfor %}
+
+
+
+    <label>Phone Number:</label>
+        <input type="number" name="phoneNumber" >
+<br>
+     <br>
+     <label >Gender:</label>
+        Male: <input type="radio" name="gender" value="male">
+          Female: <input type="radio" name="gender" value="female">
+          Other: <input type="radio" name="gender" value="other">
+<br>
+    <br>
+    <label>Date of Brith:</label>
+        <input type="date" name="date"  placeholder="your email">
+<br>
+    <br>
+    <label>Material provides:</label>
+   <div>
+      <input type="checkbox" name="interest">
+    <label>credit card</label>
+   </div>
+  <div>
+    <input type="checkbox"  name="interest" value="Debit card" />
+    <label>Debit card</label>
+  </div>
+   <div>
+       <input type="checkbox"  name="interest" value="Cheque book" />
+       <label >Cheque book</label>
+<br>
+       <br>
+       <table>
+<tr>
+        <td><label> Select Branch and District:</label></td>
+        <td><select id="input" onchange="random_function()">
+            <option>select District</option>
+            <option>Thiruvananthapuram</option>
+            <option>Kollam</option>
+            <option>Kottayam</option>
+            <option>Thrissur</option>
+            <option>Eranakulam</option>
+        </select>
+
+        <div>
+           <select id="output" onchange="random_function1()">
+        </div>
+             </td>
+      </tr>
+</table>
+
+ </form>
+
+ </body>
+</html>
+<br>
+<br>
+
+   <a href="acp"><button type="submit">Sign up</button></a>
+
+
+
+
+{% endblock %}
+
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}

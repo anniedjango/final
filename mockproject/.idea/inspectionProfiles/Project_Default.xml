@@ -1,0 +1,41 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E302" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="todoproject.settings.os" />
+          <option value="todoproject.settings.BASE_DIR" />
+          <option value="todoapp.views.django" />
+          <option value="django.views.generic.Listview" />
+          <option value="django.views.generic.importListview" />
+          <option value="todoapp.views.UpdatelView" />
+          <option value="shoppingproject.settings.BASE_DIR" />
+          <option value="shoppingproject.settings.os" />
+          <option value="shopapp.models.verbose_name" />
+          <option value="shopapp.admin.prepopulated" />
+          <option value="shopapp.admin.CategoryAdmin" />
+          <option value="shopapp.models.Product" />
+          <option value="shopapp.models.product" />
+          <option value="shopapp.admin.product" />
+          <option value="cart.context_processors.cart_items" />
+          <option value="cart.context_processors.car_items" />
+          <option value="cart.views._cart_id" />
+          <option value="travelproject.settings.annie" />
+          <option value="django.contrib.path" />
+          <option value="movieapp.views.movie" />
+          <option value="rest.urls.router" />
+          <option value="rest.urls.Path" />
+          <option value="django.conf.setting" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
